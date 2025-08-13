@@ -1,0 +1,211 @@
+/* Global CSS variables for theme */
+:root {
+  --red: #B81F24;
+  --red-dark: #9E1B20;
+  --gold: #D4AF37;
+  --bg: #FAF8F6;
+  --card-bg: #FFFFFF;
+  --line: #EAE6E2;
+  --text: #2B2B2B;
+  --text-muted: #6B6B6B;
+  --radius: 8px;
+  --shadow: 0 4px 12px rgba(0,0,0,0.05);
+  --font-family: 'Noto Sans Thai', 'Sarabun', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+a {
+  color: var(--red);
+  text-decoration: none;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Menu grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.menu-card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.menu-card h4 {
+  font-size: 1rem;
+  margin: 0.5rem 0 0.25rem;
+}
+
+.menu-card .price {
+  color: var(--gold);
+  font-weight: bold;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.btn-primary {
+  background: var(--red);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--red-dark);
+}
+
+.btn-outline {
+  border: 1px solid var(--red);
+  background: transparent;
+  color: var(--red);
+}
+
+.btn-outline:hover {
+  background: var(--red);
+  color: #fff;
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--card-bg);
+  border-top: 1px solid var(--line);
+  padding: 0.75rem 1rem;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.badge-call {
+  background: rgba(184, 31, 36, 0.1);
+  color: var(--red);
+}
+.badge-paying {
+  background: rgba(255, 204, 0, 0.1);
+  color: var(--gold);
+}
+.badge-paid {
+  background: rgba(0, 128, 0, 0.1);
+  color: green;
+}
+.badge-ordering {
+  background: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+}
+
+/* Staff table list */
+.table-row {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.table-row:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--red);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 10000;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: 90%;
+  max-width: 400px;
+  padding: 1rem;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.modal-body {
+  margin-bottom: 0.5rem;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
